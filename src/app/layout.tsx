@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
+import CustomCursor from "@/components/custom-cursor";
 
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${alternateGotNo2D.className} bg-[#f7f9fb]`}>
+        <CustomCursor />
         <Sidebar />
         <div className="bg-[#f7f9fb] md:ml-[80px] p-4">
           {children}

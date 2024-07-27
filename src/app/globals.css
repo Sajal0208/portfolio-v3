@@ -2,3 +2,30 @@
 @tailwind components;
 @tailwind utilities;
   
+body {
+    cursor: none;
+}
+
+.cursor-dot {
+    width: 5px;
+    height : 5px;
+    background-color: black;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid black;
+}
+
+.cursor-outline,
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
