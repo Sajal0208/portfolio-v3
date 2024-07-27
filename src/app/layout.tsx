@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/sidebar";
+import Footer from "@/components/footer";
 
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Sidebar />
         <div className="bg-[#f7f9fb] md:ml-[80px] p-4">
           {children}
+          <Footer />
         </div>
       </body>
     </html>
