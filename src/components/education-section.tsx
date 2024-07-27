@@ -17,7 +17,7 @@ const data = [
 
 export default function EducationSection() {
   return <div className="flex flex-col gap-y-2">
-    <h1 className="text-lg text-primary">Education</h1>
+    <h1 className="text-xl text-primary">Education</h1>
     <ul className="flex flex-col gap-y-2">
       {data.map((item, index) => (
         <li className="flex items-start gap-x-2" key={index}>
