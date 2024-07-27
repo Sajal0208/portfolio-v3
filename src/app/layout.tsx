@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 import CustomCursor from "@/components/custom-cursor";
+import CV from "@/components/cv";
 
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <CV />
       </body>
     </html>
   );
