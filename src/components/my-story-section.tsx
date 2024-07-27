@@ -20,8 +20,8 @@ Thanks for reading to the end. Why not get in touch via the methods below…`
 ]
 
 export default function MyStorySection() {
-  return <div className="flex flex-col gap-y-2 mt-32">
-    <div className='flex flex-row gap-x-10'>
+  return <div className="flex flex-col gap-y-2 mt-16 md:mt-32">
+    <div className='flex flex-col xs:flex-row gap-y-10 xs:gap-y-0 gap-x-10'>
       {stories.map((story) => (
         <MyStoryParagraph heading={story.heading} text={story.text} />
       ))}
@@ -30,7 +30,7 @@ export default function MyStorySection() {
 }
 
 const MyStoryParagraph = ({ heading, text }: { heading: string, text: string }) => {
-  return <div className="tracking-wide flex flex-col gap-y-2 w-[600px]">
+  return <div className="tracking-wide flex flex-col gap-y-2 w-full xs:w-[600px]">
     <p className="text-primary text-2xl  font-bold">{heading}</p>
     <p className="text-gray-500 text-xl">{text}</p>
   </div>
