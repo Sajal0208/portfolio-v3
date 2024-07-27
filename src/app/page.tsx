@@ -14,7 +14,7 @@ export default function Home() {
       <MainHeader />
       <HeroSection />
       <MyStorySection />
-      <div className="flex flex-col xs:flex-row mt-16 md:mt-32 gap-y-10 md:gap-y-0  gap-x-10">
+      <div className="flex flex-col sm:flex-row mt-16 md:mt-32 gap-y-10 md:gap-y-0  gap-x-10">
         <EducationSection />
         <ExperienceSection />
       </div>

@@ -35,7 +35,7 @@ const experience = [
 ]
 
 export default function ExperienceSection() {
-  return <div className="flex flex-col gap-y-2 w-[600px] tracking-widest">
+  return <div className="flex flex-col gap-y-2 w-full sm:w-[600px] tracking-widest">
     <h1 className="text-3xl text-primary">Experience</h1>
     {experience.map((item, index) => (
       <div key={index} className="flex flex-row items-start gap-x-2">

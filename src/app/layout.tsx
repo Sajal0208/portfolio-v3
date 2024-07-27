@@ -38,7 +38,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${alternateGotNo2D.className} `}>
+      <body className={`${alternateGotNo2D.className} max-w-screen`}>
         <CustomCursor />
         {isPending ? <OnloadAnimation /> : (
           <>
