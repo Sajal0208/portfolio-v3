@@ -27,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${alternateGotNo2D.className} bg-[#f7f9fb]`}>
+      <body className={`${alternateGotNo2D.className} `}>
         <CustomCursor />
         <Sidebar />
-        <div className="bg-[#f7f9fb] md:ml-[80px] p-4">
+        <div className=" md:ml-[80px] p-4">
           {children}
           <Footer />
         </div>
