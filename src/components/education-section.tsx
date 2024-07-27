@@ -16,12 +16,12 @@ const data = [
 ]
 
 export default function EducationSection() {
-  return <div className="flex flex-col gap-y-2">
-    <h1 className="text-xl text-primary">Education</h1>
+  return <div className="flex flex-col gap-y-2 w-[600px] tracking-wider">
+    <h1 className="text-3xl text-primary">Education</h1>
     <ul className="flex flex-col gap-y-2">
       {data.map((item, index) => (
         <li className="flex items-start gap-x-2" key={index}>
-          <IoMdSchool className="text-xl text-primary" />
+          <IoMdSchool className="text-xl text-primary mt-1" />
           <div>
             <h2 className="text-xl">{item.title}</h2>
             <p className="text-gray-500">{item.institution}</p>
