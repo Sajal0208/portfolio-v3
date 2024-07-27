@@ -35,13 +35,13 @@ const experience = [
 ]
 
 export default function ExperienceSection() {
-  return <div className="flex flex-col gap-y-2 w-[600px] tracking-wider">
+  return <div className="flex flex-col gap-y-2 w-[600px] tracking-widest">
     <h1 className="text-3xl text-primary">Experience</h1>
     {experience.map((item, index) => (
       <div key={index} className="flex flex-row items-start gap-x-2">
         {item.iconSrc ? <Image className="w-6 h-6 mt-1" src={item.iconSrc} alt={item.company} width={32} height={32} /> : <SiVercel className="w-6 h-6 mt-2" />}
         <div className="flex flex-col items-start">
-          <h2 className="text-lg font-bold flex flex-row items-center gap-x-2">{item.title}<Link href={item.link} target="_blank"><IoMdLink className="w-6 h-6" /></Link></h2>
+          <h2 className="text-lg font-bold flex flex-row items-center gap-x-2">{item.title}<Link href={item.link} className="cursor-none" target="_blank"><IoMdLink className="w-6 h-6" /></Link></h2>
           <p className="text-gray-500">{item.company}</p>
           <p className="text-gray-500">{item.duration}</p>
         </div>
