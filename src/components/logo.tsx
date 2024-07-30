@@ -1,3 +1,9 @@
+'use client'
+
+import { useRouter } from "next/navigation";
+
 export function Logo() {
-  return <div className="text-5xl text-primary">Logo</div>;
+  const router = useRouter();
+
+  return <div className="text-5xl text-primary" onClick={() => router.push("/")}>Logo</div>;
 }
