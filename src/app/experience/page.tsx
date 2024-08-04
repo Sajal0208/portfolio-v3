@@ -3,7 +3,6 @@ import { MainHeader } from "@/components/main-header";
 
 export default function Experience() {
   return <main>
-    <MainHeader />
     <ExperienceBarSection />
   </main>
 }

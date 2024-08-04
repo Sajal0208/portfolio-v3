@@ -8,6 +8,7 @@ import CustomCursor from "@/components/custom-cursor";
 import CV from "@/components/cv";
 import { useEffect, useTransition } from "react";
 import OnloadAnimation from "@/components/onload-animation";
+import { MainHeader } from "@/components/main-header";
 
 
 // export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({
           <>
             <Sidebar />
             <div className=" md:ml-[80px] p-4">
+              <MainHeader />
               {children}
               <Footer />
             </div>
