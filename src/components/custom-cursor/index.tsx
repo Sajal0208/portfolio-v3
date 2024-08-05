@@ -1,9 +1,10 @@
 'use client'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
     const cursorDotRef = useRef<HTMLDivElement>(null);
     const cursorOutlineRef = useRef<HTMLDivElement>(null);
+    const [isHovering, setIsHovering] = useState(false);
 
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
@@ -23,17 +24,28 @@ export default function CustomCursor() {
             }
         };
 
+        const handleMouseEnter = () => setIsHovering(true);
+        const handleMouseLeave = () => setIsHovering(false);
+
         window.addEventListener('mousemove', moveCursor);
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', handleMouseEnter);
+            el.addEventListener('mouseleave', handleMouseLeave);
+        });
 
         return () => {
             window.removeEventListener('mousemove', moveCursor);
+            document.querySelectorAll('a, button').forEach(el => {
+                el.removeEventListener('mouseenter', handleMouseEnter);
+                el.removeEventListener('mouseleave', handleMouseLeave);
+            });
         };
     }, []);
 
     return (
         <>
-            <div ref={cursorDotRef} className="cursor-dot"></div>
-            <div ref={cursorOutlineRef} className="cursor-outline"></div>
+            <div ref={cursorDotRef} className={`cursor-dot ${isHovering ? 'scale-300' : ''}`}></div>
+            <div ref={cursorOutlineRef} className={`cursor-outline ${isHovering ? 'hidden' : ''}`}></div>
         </>
     );
 }
