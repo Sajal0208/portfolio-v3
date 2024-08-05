@@ -58,7 +58,12 @@ const DraggableCard = ({ skill, containerRef, initialX, initialY }: {
         padding: '10px',
         cursor: 'grab',
         color: "white",
+        width: "80px",
+        height: "40px",
         userSelect: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
       }}
     >
@@ -96,7 +101,7 @@ export const FloatingCards = ({ skills }: {
     const categoryIndex = categories.indexOf(skill.category);
     const skillsInCategory = skillsByCategory[skill.category];
     const skillIndex = skillsInCategory.findIndex(s => s.name === skill.name);
-    return (skillIndex % 5) * 120 + 10; // Assuming each card is about 100px wide with 20px gap
+    return (skillIndex % 5) * 100 + 10; // Assuming each card is about 100px wide with 20px gap
   };
 
   return (

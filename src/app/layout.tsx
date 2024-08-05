@@ -44,7 +44,7 @@ export default function RootLayout({
         {isPending ? <OnloadAnimation /> : (
           <>
             <Sidebar />
-            <div className=" md:ml-[80px] p-4">
+            <div className="md:ml-[80px] flex flex-col min-h-screen p-4">
               <MainHeader />
               {children}
               <Footer />
