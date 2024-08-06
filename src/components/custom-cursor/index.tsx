@@ -44,8 +44,8 @@ export default function CustomCursor() {
 
     return (
         <>
-            <div ref={cursorDotRef} className={`cursor-dot ${isHovering ? 'scale-300' : ''}`}></div>
-            <div ref={cursorOutlineRef} className={`cursor-outline ${isHovering ? 'hidden' : ''}`}></div>
+            <div ref={cursorDotRef} className={`cursor-dot ${isHovering ? ' cursor-dot-hover' : ''}`}></div>
+            <div ref={cursorOutlineRef} className={`cursor-outline ${isHovering ? ' cursor-outline-hover' : ''}`}></div>
         </>
     );
 }

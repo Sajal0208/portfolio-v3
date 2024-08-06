@@ -10,7 +10,7 @@ const experience = [
     id: 'rekonsile',
     title: "Full Stack Developer",
     company: "Rekonsile",
-    link: "https://app.rekonsile.com/",
+    link: "https://rekonsile.com/",
     iconSrc: "/rekonsile.png",
     duration: "May 2024 - Present",
     startDate: new Date("2024-05-21"),

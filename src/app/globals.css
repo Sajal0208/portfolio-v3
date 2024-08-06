@@ -6,6 +6,7 @@ body {
     background-size: 150px 150px; 
     background-image: linear-gradient(to right, rgba(128, 128, 128, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
     cursor: none;
+    box-sizing: border-box;
 }
 
 .cursor-dot {
@@ -31,3 +32,14 @@ body {
     z-index: 9999;
     pointer-events: none;
 }
+
+.cursor-dot-hover {
+    width: 10px;
+    height : 10px;
+    background-color: black;
+}
+
+.cursor-outline-hover {
+    display: none;
+}
+

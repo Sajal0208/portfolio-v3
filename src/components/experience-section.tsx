@@ -7,7 +7,7 @@ const experience = [
   {
     title: "Full Stack Developer",
     company: "Rekonsile",
-    link: "https://app.rekonsile.com/",
+    link: "https://rekonsile.com/",
     iconSrc: "/rekonsile.png",
     duration: "May 2024 - Present",
   },
