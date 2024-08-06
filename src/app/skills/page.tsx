@@ -23,6 +23,7 @@ const skills = [
   { name: "Git", color: "#F05032", category: "Tools/Platforms" },
   { name: "CI/CD", color: "#000000", category: "Tools/Platforms" },
   { name: "Microservices", color: "#000000", category: "Tools/Platforms" },
+  { name: "tRPC", color: "#3178C6", category: "APIs/Protocols" },
 ];
 
 export default function Skills() {
