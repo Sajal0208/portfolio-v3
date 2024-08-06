@@ -4,11 +4,11 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useState } from "react";
 
-export function BackgroundOverlayCard({ textColor, title, description, image, link, githubLink, gif, backgroundImageColorShade }: { textColor: string, title: string, description: string, image: string, link: string, githubLink: string, gif: string, backgroundImageColorShade: string }) {
+export function BackgroundOverlayCard({ textColor, title, description, image, link, githubLink, gif, backgroundImageColorShade, tags }: { textColor: string, title: string, description: string, image: string, link: string, githubLink: string, gif: string, backgroundImageColorShade: string, tags: string[] }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="max-w-xs w-full">
+    <div className="max-w-xs w-full" >
       <div
         style={{
           backgroundImage: `url(${isHovered ? gif : image})`,
@@ -29,6 +29,11 @@ export function BackgroundOverlayCard({ textColor, title, description, image, li
           <p className={cn("font-normal text-base relative my-4", textColor)}>
             {description}
           </p>
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag, index) => (
+              <div key={index} className="bg-gray-200 px-2 py-1 rounded-md">{tag}</div>
+            ))}
+          </div>
         </div>
         <GithubIcon link={githubLink} />
       </div>
