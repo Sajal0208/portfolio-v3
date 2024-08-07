@@ -109,7 +109,7 @@ export const FloatingCards = ({ skills }: {
       <div className="flex flex-row gap-4">
         <div className="flex flex-col gap-4">
           {categories.map((category, index) =>
-            <div key={index} className="w-full h-full relative flex items-center">
+            <div key={index} className="w-full text-primary text-xl h-full relative flex items-center">
               {category}
             </div>
           )}

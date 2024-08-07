@@ -16,7 +16,7 @@ export function MainHeader() {
   const pathname = usePathname();
 
   return (
-    <div className="flex justify-between sm:justify-start mb-10 sm:gap-x-32 py-10 items-start">
+    <div className="flex justify-between sm:justify-start mb-10 sm:gap-x-24 py-10 items-start">
       <Logo />
       <div className="grid grid-cols-2 gap-x-16 sm:gap-x-24">
         {navLinks.map((link) => (
