@@ -16,8 +16,8 @@ const experience = [
     startDate: new Date("2024-05-21"),
     endDate: new Date(),
     description: [
-      "Early Stage Startup B2B Startup",
-      "Developing end-to-end solution for a startup that is building a platform for businesses to manage their ecommerce data.",
+      "Engineered end-to-end features for Rekonsile's e-commerce analytics platform. Optimized MongoDB schemas and implemented Node.js streams, achieving 3x faster file exports and significantly enhanced dashboard performance.",
+      "Developed efficient data pipelines for multi-marketplace e-commerce analytics. Created high-performance business insight tools, balancing complex calculations with rapid query times for real-time data analysis.",
     ]
   },
   {

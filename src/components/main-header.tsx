@@ -8,7 +8,8 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
-  { label: "My Skills!?", href: "/skills" },
+  { label: "Skills", href: "/skills" },
+  { label: "Achievements", href: "/achievements" },
 ]
 
 export function MainHeader() {
