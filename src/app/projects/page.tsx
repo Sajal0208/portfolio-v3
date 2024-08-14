@@ -163,75 +163,58 @@ export default function ProjectsPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const allTags = projects.flatMap((project) => project.tags);
   const uniqueTags = Array.from(new Set(allTags));
-  return <main className="flex flex-col gap-4">
-    <div className="flex flex-row gap-4">
-      <AnimatePresence>
-        {selectedTags.map((tag, index) => (
-          <motion.div
-            key={tag}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setSelectedTags(selectedTags.filter((t) => t !== tag))}
-            className="bg-primary px-2 py-1 rounded-md cursor-pointer"
-          >
-            {tag}
-          </motion.div>
-        ))}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {uniqueTags.map((tag) => {
-          if (selectedTags.includes(tag)) return null;
-          return (
+  return (
+    <main className="flex flex-col gap-4 w-full">
+      <div className="grid grid-cols-3 md:flex md:flex-row gap-4 flex-wrap">
+        <AnimatePresence>
+          {selectedTags.map((tag, index) => (
             <motion.div
               key={tag}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              onClick={() => setSelectedTags([...selectedTags, tag])}
-              className="bg-gray-200 px-2 py-1 rounded-md cursor-pointer"
+              onClick={() => setSelectedTags(selectedTags.filter((t) => t !== tag))}
+              className="bg-primary px-2 py-1 rounded-md cursor-pointer whitespace-nowrap"
             >
               {tag}
             </motion.div>
-          );
-        })}
-      </AnimatePresence>
-      {selectedTags.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setSelectedTags([])}
-          className="bg-red-500 text-white px-2 py-1 rounded-md cursor-pointer"
-        >
-          Clear All
-        </motion.div>
-      )}
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {/* {projects.map((project, index) => {
-        if (selectedTags.length > 0 && !project.tags.some((t) => selectedTags.includes(t))) return null;
-        return (
-          <BackgroundOverlayCard
-            key={index}
-            textColor={project.textColor}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            link={project.link}
-            githubLink={project.githubLink}
-            gif={project.gif}
-            backgroundImageColorShade={project.backgroundImageColorShade}
-            tags={project.tags}
-          />
-        )
-      })} */}
+          ))}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {uniqueTags.map((tag) => {
+            if (selectedTags.includes(tag)) return null;
+            return (
+              <motion.div
+                key={tag}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => setSelectedTags([...selectedTags, tag])}
+                className="bg-gray-200 px-2 py-1 rounded-md cursor-pointer whitespace-nowrap"
+              >
+                {tag}
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+        {selectedTags.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setSelectedTags([])}
+            className="bg-red-500 text-white px-2 py-1 rounded-md cursor-pointer"
+          >
+            Clear All
+          </motion.div>
+        )}
+      </div>
       <ExpandableCardDemo projects={projects} tags={selectedTags} />
-    </div>
-  </main>
+    </main>
+  )
 }
 

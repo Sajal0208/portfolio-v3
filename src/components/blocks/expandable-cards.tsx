@@ -56,7 +56,7 @@ export function ExpandableCardDemo({ projects, tags }: { projects: any[], tags: 
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full h-full md:h-[80%] md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -114,13 +114,13 @@ export function ExpandableCardDemo({ projects, tags }: { projects: any[], tags: 
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+      <ul className="w-full grid grid-cols-1 md:grid-cols-2 md:max-w-[90%] lg:max-w-[80%] items-start gap-4">
         {filteredProjects.map((project, index) => (
           <motion.div
             layoutId={`card-${project.title}-${id}`}
             key={project.title}
             onClick={() => setActive(project)}
-            className="p-4 flex flex-col w-[400px] h-[400px] bg-gray-200/50 hover:bg-gray-400/50 dark:bg-neutral-800 dark:hover:bg-neutral-900 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col max-w-[400px] md:max-w-[400px] min-w-[300px] min-h-[450px] bg-gray-200/50 hover:bg-gray-400/50 dark:bg-neutral-800 dark:hover:bg-neutral-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${project.title}-${id}`}>
@@ -146,7 +146,7 @@ export function ExpandableCardDemo({ projects, tags }: { projects: any[], tags: 
                   {project.description}
                 </motion.p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {project.tags.map((tag: string) => (
                   <span key={tag} className="text-xs font-semibold bg-primary/10 text-primary px-2 py-1 rounded-full">
                     {tag}
