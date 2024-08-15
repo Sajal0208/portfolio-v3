@@ -127,7 +127,7 @@ export default function ExperienceBarSection() {
             return (
               <motion.div
                 key={job.id}
-                className="absolute h-10 bg-primary rounded-md flex items-center justify-center text-white text-xs"
+                className="absolute h-10 bg-primary rounded-md flex items-center justify-center text-white text-[7px] sm:text-sm"
                 style={{
                   left: `${startOffset}%`,
                   width: `${duration}%`,
@@ -149,7 +149,7 @@ export default function ExperienceBarSection() {
           })}
         </AnimatePresence>
       </div>
-      <div className="mt-8 grid grid-cols-2 gap-4">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <AnimatePresence>
           {sortedExperience.map((job, index) => {
             if (isProfessional && !professionalExperience.includes(job.id)) {
