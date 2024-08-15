@@ -12,7 +12,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const [isPending, startTransition] = useTransition()
   useEffect(() => {
     startTransition(() => {
-      return new Promise((resolve) => setTimeout(resolve, 3000))
+      return new Promise((resolve) => setTimeout(resolve, 4000))
     })
   }, [])
   return (
