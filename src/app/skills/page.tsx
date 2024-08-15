@@ -1,4 +1,8 @@
-import { FloatingCards } from "@/components/floating-cards";
+"use client";
+
+// import { FloatingCards } from "@/components/floating-cards";
+import { useRouter } from "next/navigation";
+
 const skills = [
   { name: "React", color: "#61DAFB", category: "Libraries/Frameworks" },
   { name: "Next.js", color: "#000000", category: "Libraries/Frameworks" },
@@ -27,7 +31,10 @@ const skills = [
 ];
 
 export default function Skills() {
+  const router = useRouter();
+  router.push("/");
   return <main>
-    <FloatingCards skills={skills} />
+    Not Found
+    {/* <FloatingCards skills={skills} /> */}
   </main>
 }
