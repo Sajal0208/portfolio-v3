@@ -115,7 +115,7 @@ export default function ExperienceBarSection() {
       <h2 className="text-2xl font-bold mb-4 text-primary">
         {getHeading()} <Switch checked={isProfessional} onCheckedChange={() => setIsProfessional(!isProfessional)} />
       </h2>
-      <div className="relative h-64 rounded-lg overflow-hidden">
+      <div className="relative h-64 overflow-hidden border-b-4 border-primary">
         <AnimatePresence>
           {sortedExperience.map((job, index) => {
             if (isProfessional && !professionalExperience.includes(job.id)) {
@@ -149,7 +149,42 @@ export default function ExperienceBarSection() {
           })}
         </AnimatePresence>
       </div>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="relative h-12 text-xs text-gray-600 mt-1">
+        {sortedExperience.map((job, index, array) => {
+          if (isProfessional && !professionalExperience.includes(job.id)) {
+            return null;
+          }
+          const startOffset = (job.startDate.getTime() - earliestDate.getTime()) / totalDuration * 100;
+
+          // Check for overlap with previous date
+          let verticalHeight = 2;
+          let verticalOffset = 0;
+          if (index > 0) {
+            const prevJob = array[index - 1];
+            const prevOffset = (prevJob.startDate.getTime() - earliestDate.getTime()) / totalDuration * 100;
+            if (Math.abs(startOffset - prevOffset) < 15) {
+              verticalOffset = 16; // Move down if too close to previous date
+              verticalHeight = 6;
+            }
+          }
+
+          return (
+            <div
+              key={job.id}
+              className={`absolute ${index === sortedExperience.length - 1 ? 'ml-4 md:ml-0' : ''}`}
+              style={{
+                left: `${startOffset}%`,
+                transform: 'translateX(-50%)',
+                top: verticalOffset
+              }}
+            >
+              <div className={`absolute border-[1px] border-dotted border-gray-400  h-${verticalHeight} bg-gray-400`} style={{ left: '50%', top: -verticalOffset }}></div>
+              <div className="mt-2">{job.startDate.toLocaleDateString()}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 ">
         <AnimatePresence>
           {sortedExperience.map((job, index) => {
             if (isProfessional && !professionalExperience.includes(job.id)) {
