@@ -2,8 +2,7 @@ const stories = [
   {
     heading: "What I am currently learning",
     text: ["Rust - The sole purpose is to build on Solana",
-      "Solidity - Just going through the basics",
-      "Gsap - For creating aesthetically pleasing animations",
+      "Playing with AI - Just for fun",
       "Perfecting MongoDB aggregation queries - Yeah, this is for my job"]
   },
   {
