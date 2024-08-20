@@ -42,10 +42,10 @@ export default function SkillsSection() {
 
   return <div className='max-w-2xl'>
     <div className="mt-8 md:mt-16 flex flex-row items-center gap-x-2 text-primary">
-      <h1 className="text-2xl">
-        Skills
-      </h1>
-      <div className="flex flex-row flex-wrap gap-x-2  gap-y-2">
+      <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 items-start">
+        <h1 className="text-2xl">
+          Skills
+        </h1>
         {categories.map((category) => (
           <button
             key={category}
