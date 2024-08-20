@@ -178,7 +178,7 @@ export default function ExperienceBarSection() {
                 top: verticalOffset
               }}
             >
-              <div className={`absolute border-[1px] border-dotted border-gray-400  h-${verticalHeight} bg-gray-400`} style={{ left: '50%', top: -verticalOffset }}></div>
+              <div className={`absolute border-[0.5px] border-solid border-gray-400  h-${verticalHeight} bg-gray-400`} style={{ left: '50%', top: -verticalOffset }}></div>
               <div className="mt-2">{job.startDate.toLocaleDateString()}</div>
             </div>
           );
