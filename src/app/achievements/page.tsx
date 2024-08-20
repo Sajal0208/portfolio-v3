@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import { IoMdLink } from 'react-icons/io';
 
-const achievements = [
+interface Achievement {
+  id: string;
+  title: string;
+  organization?: string;
+  link: string;
+  date: string;
+  description?: string;
+}
+
+const achievements: Achievement[] = [
   {
     id: 'api-hacks',
     title: "2nd Runner-up in API Hacks 2.0",
@@ -28,20 +37,27 @@ const achievements = [
   },
 ];
 
-const blogs = [
+const blogs: Achievement[] = [
+  {
+    id: 'blog-3',
+    title: "Mastering 40x Error Handling in Node.js with TypeScript: A Peaceful Approach",
+    date: "2024",
+    link: "https://medium.com/@sajaldewangan/mastering-40x-error-handling-in-node-js-with-typescript-a-peaceful-approach-eedd8eb99c41",
+    // description: "Mastering 40x Error Handling in Node.js with TypeScript: A Peaceful Approach",
+  },
   {
     id: 'blog-1',
     title: "Authentication using cookies with JWT in ExpressJs",
     date: "2023",
     link: "https://medium.com/@sajaldewangan/authentication-using-cookies-with-jwt-in-expressjs-900467c3b8d3",
-    description: "Authentication using cookies with JWT in ExpressJs.",
+    // description: "Authentication using cookies with JWT in ExpressJs.",
   },
   {
     id: 'blog-2',
     title: "Basic Template using NodeJs, Typescript",
     date: "2023",
     link: "https://medium.com/@sajaldewangan/basic-template-using-nodejs-typescript-9e74d2dbb42b",
-    description: "Basic template using NodeJs, Typescript.",
+    // description: "Basic template using NodeJs, Typescript.",
   },
 ];
 
@@ -75,15 +91,15 @@ export default function Achievements() {
           <div className="space-y-6">
             {blogs.map((blog) => (
               <div key={blog.id}>
-                <h4 className="text-xl text-primary font-semibold flex items-center">
+                <h4 className="text-xl text-primary font-semibold flex items-start">
                   {blog.title}
                   <Link href={blog.link} className="ml-2" target="_blank" rel="noopener noreferrer">
-                    <IoMdLink className="w-6 h-6" />
+                    <IoMdLink className="w-6 h-6 mt-1" />
                   </Link>
                 </h4>
                 <p className="text-base text-gray-600">{blog.date}</p>
                 <p className="text-lg text-gray-600 mt-2">
-                  {blog.description}
+                  {blog.description ? blog.description : ""}
                 </p>
               </div>
             ))}
