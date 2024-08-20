@@ -10,9 +10,8 @@ export default function HeroSection() {
         Hello, I am Sajal, I AM NOT JUST A FULLSTACK DEVELOPER,
       </h1>
       <h1 className="md:text-6xl text-3xl tracking-wide text-primary uppercase">
-        I AM <FlipWords words={words} />
+        I AM <FlipWords className="ml-[-8px]" words={words} />
       </h1>
-
     </div>
   );
 }

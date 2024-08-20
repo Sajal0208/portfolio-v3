@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const experience = [
   {
-    title: "Full Stack Developer",
+    title: "Software Engineer",
     company: "Rekonsile",
     link: "https://rekonsile.com/",
     iconSrc: "/rekonsile.png",
@@ -19,7 +19,7 @@ const experience = [
     duration: "Mar 2024 - May 2024",
   },
   {
-    title: "React Developer",
+    title: "Software Engineer",
     link: "https://www.metafic.co/",
     iconSrc: "/metafic.png",
     company: "Metafic",

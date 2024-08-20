@@ -8,7 +8,7 @@ import { Switch } from './ui/switch';
 const experience = [
   {
     id: 'rekonsile',
-    title: "Full Stack Developer",
+    title: "Software Engineer",
     company: "Rekonsile",
     link: "https://rekonsile.com/",
     iconSrc: "/rekonsile.png",
@@ -59,7 +59,7 @@ const experience = [
   },
   {
     id: 'metafic',
-    title: "React Developer",
+    title: "Software Engineer",
     link: "https://www.metafic.co/",
     iconSrc: "/metafic.png",
     company: "Metafic",
