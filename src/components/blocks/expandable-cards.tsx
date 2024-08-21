@@ -38,6 +38,8 @@ export function ExpandableCardDemo({ projects, tags }: { projects: any[], tags: 
 
   useOutsideClick(ref, () => setActive(null));
 
+  const gifExtension = active && active.gif.split(".")[1];
+
   return (
     <>
       <AnimatePresence>
@@ -59,14 +61,14 @@ export function ExpandableCardDemo({ projects, tags }: { projects: any[], tags: 
               className="w-full max-w-[90%] md:max-w-[500px] h-[fit] md:h-fit md:max-h-[90%] rounded-xl  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
-                <Image
+                {gifExtension === "mp4" ? <video src={active.gif} autoPlay muted loop className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-fill object-top" /> : <Image
                   priority
                   width={200}
                   height={200}
                   src={active.gif}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-fill object-top"
-                />
+                />}
               </motion.div>
 
               <div>

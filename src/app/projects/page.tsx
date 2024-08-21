@@ -6,6 +6,32 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "Web Transcriber",
+    description: "A web application to transcribe audio files into text using the Whisper.cpp library.",
+    image: "/web-transcriber.jpeg",
+    link: "",
+    githubLink: "https://github.com/Sajal0208/web-transcriber-client",
+    gif: "web-transcriber.mp4",
+    textColor: "text-white",
+    backgroundImageColorShade: "black",
+    tags: ["NextJs", "ExpressJs", "Fullstack", "Artificial Intelligence", "Whisper.cpp"],
+    content: () => {
+      return (
+        <ul className="list-disc list-inside">
+          <li>
+            Engineered a web application to transcribe audio files into text using the Whisper.cpp library, providing users with a seamless and immersive real-time communication experience.
+          </li>
+          <li>
+            Utilized the Whisper.cpp library, a high-performance and efficient transcription engine, to handle the audio processing and text extraction tasks.
+          </li>
+          <li>
+            No API key required, no database required.
+          </li>
+        </ul>
+      )
+    }
+  },
+  {
     description: "Merge your github contributions",
     title: "Mergit",
     image: "/mergit.png",
@@ -19,7 +45,7 @@ const projects = [
       return (
         <ul className="list-disc list-inside">
           <li>
-            Building Mergit, a SaaS platform enabling developers to aggregate and showcase GitHub contributions across multiple accounts, streamlining portfolio management and professional presentation.
+            Scaling Mergit, a SaaS platform enabling developers to aggregate and showcase GitHub contributions across multiple accounts, streamlining portfolio management and professional presentation.
           </li>
           <li>
             Implemented premium features including lifetime contribution preservation, safeguarding users' work history even after organizational repository access is revoked, thus enhancing career continuity and achievement documentation.
@@ -129,7 +155,19 @@ const projects = [
     gif: "/integrate.io.png",
     textColor: "text-white",
     backgroundImageColorShade: "white",
-    tags: ["ReactJs", "NodeJs", "Fullstack"]
+    tags: ["ReactJs", "NodeJs", "Fullstack"],
+    content: () => {
+      return (
+        <ul className="list-disc list-inside">
+          <li>
+            Developed a web application to schedule a post on Dev.to && Cross-Post between Dev.to Medium Hash node
+          </li>
+          <li>
+            Utilized the Dev.to API to schedule a post on Dev.to && Cross-Post between Dev.to Medium Hash node
+          </li>
+        </ul>
+      )
+    }
   },
   {
     description: "A fully responsive portfolio website which enables light and dark mode made using ReactJs.",
