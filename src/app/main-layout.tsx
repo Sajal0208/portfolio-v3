@@ -3,34 +3,37 @@ import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 import CustomCursor from "@/components/custom-cursor";
 import CV from "@/components/cv";
-import { useEffect, useTransition } from "react";
+import { useEffect, useState } from "react";
 import OnloadAnimation from "@/components/onload-animation";
 import { MainHeader } from "@/components/main-header";
 
-
 export default function MainLayout({ children }: { children: React.ReactNode }) {
-  const [isPending, startTransition] = useTransition()
+  const [showOnload, setShowOnload] = useState(true);
+
   useEffect(() => {
-    startTransition(() => {
-      return new Promise((resolve) => setTimeout(resolve, 4000))
-    })
-  }, [])
+    const timer = setTimeout(() => {
+      setShowOnload(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <CustomCursor />
-      {
-        isPending ? <OnloadAnimation /> : (
-          <>
-            <Sidebar />
-            <div className="md:ml-[80px] flex flex-col min-h-screen p-4">
-              <MainHeader />
-              {children}
-              <Footer />
-            </div>
-            <CV />
-          </>
-        )
-      }
+      {showOnload ? (
+        <OnloadAnimation />
+      ) : (
+        <>
+          <Sidebar />
+          <div className="md:ml-[80px] flex flex-col min-h-screen p-4">
+            <MainHeader />
+            {children}
+            <Footer />
+          </div>
+          <CV />
+        </>
+      )}
     </>
   )
 }
