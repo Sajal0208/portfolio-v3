@@ -7,14 +7,25 @@ import { Switch } from './ui/switch';
 
 const experience = [
   {
+    id: 'wildcard',
+    title: "Software Engineer",
+    company: "Wildcard",
+    link: "https://wildcard.lol/",
+    iconSrc: "/wildcard.png",
+    duration: "Oct 2024 - Present",
+    startDate: new Date("2024-10-10"),
+    endDate: new Date(),
+    description: []
+  },
+  {
     id: 'rekonsile',
     title: "Software Engineer",
     company: "Rekonsile",
     link: "https://rekonsile.com/",
     iconSrc: "/rekonsile.png",
-    duration: "May 2024 - Present",
+    duration: "May 2024 - Sept 2024",
     startDate: new Date("2024-05-21"),
-    endDate: new Date(),
+    endDate: new Date("2024-09-21"),
     description: [
       "Engineered end-to-end features for Rekonsile's e-commerce analytics platform. Optimized MongoDB schemas and implemented Node.js streams, achieving 3x faster file exports and significantly enhanced dashboard performance.",
       "Developed efficient data pipelines for multi-marketplace e-commerce analytics. Created high-performance business insight tools, balancing complex calculations with rapid query times for real-time data analysis.",
@@ -89,7 +100,7 @@ const experience = [
   },
 ]
 
-const professionalExperience = ['rekonsile', 'incented', 'metafic', 'pcoder'];
+const professionalExperience = ['rekonsile', 'incented', 'metafic', 'pcoder', 'wildcard'];
 
 export default function ExperienceBarSection() {
   const [isProfessional, setIsProfessional] = useState(true);
@@ -115,7 +126,7 @@ export default function ExperienceBarSection() {
       <h2 className="text-2xl font-bold mb-4 text-primary">
         {getHeading()} <Switch checked={isProfessional} onCheckedChange={() => setIsProfessional(!isProfessional)} />
       </h2>
-      <div className="relative h-64 overflow-hidden border-b-4 border-primary">
+      <div className="relative h-72 overflow-hidden border-b-4 border-primary">
         <AnimatePresence>
           {sortedExperience.map((job, index) => {
             if (isProfessional && !professionalExperience.includes(job.id)) {
@@ -184,7 +195,7 @@ export default function ExperienceBarSection() {
           );
         })}
       </div>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 ">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <AnimatePresence>
           {sortedExperience.map((job, index) => {
             if (isProfessional && !professionalExperience.includes(job.id)) {
